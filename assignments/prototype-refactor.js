@@ -16,7 +16,7 @@ class GameObject {
     }
 
     destroy() {
-    return `${this.name} was removed from the game`;
+        return `${this.name} was removed from the game`;
     }
 
 }
@@ -28,7 +28,7 @@ class GameObject {
   * should inherit destroy() from GameObject's prototype
 */
 
-class CharacterStats extends GameObject{
+class CharacterStats extends GameObject {
     constructor(attributes) {
         super(attributes);
         this.healthPoints = attributes.healthPoints;
@@ -38,8 +38,6 @@ class CharacterStats extends GameObject{
         return `${this.name} took damage`;
     }
 }
-
-
 
 
 /*
@@ -53,8 +51,8 @@ class CharacterStats extends GameObject{
 */
 
 
-class Humanoid extends CharacterStats{
-    constructor(attributes){
+class Humanoid extends CharacterStats {
+    constructor(attributes) {
         super(attributes);
         this.team = attributes.team;
         this.weapons = attributes.weapons;
