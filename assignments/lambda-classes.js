@@ -124,8 +124,6 @@ noSleep.standUp('night owls');
 noSleep.debugsCode(derper, "javascript");
 
 
-
-
 /*
 
 
@@ -140,3 +138,27 @@ noSleep.debugsCode(derper, "javascript");
 *
 * */
 
+Student.prototype.grade = 70;
+console.log(derper.grade); //tests that derper now has a grade
+
+Instructor.prototype.randomizeGrade = function (student) {
+    randNum = Math.random() * 10;
+    if (randNum > 5) {
+        student.grade += randNum;
+    } else {
+        student.grade -= randNum;
+    }
+    console.log(student.grade);
+}
+
+fred.randomizeGrade(derper); //tests the randomizeGrade function on fred and derper
+
+Student.prototype.graduate = function () {
+    if (this.grade > 70) {
+        return `${this.name} has a passing grade of ${this.grade} and has now officially graduated!`;
+    } else {
+        return `${this.name} has a failing grade of ${this.grade} and has now officially failed!`;
+    }
+}
+
+console.log(derper.graduate()); //tests the graduate function on derper
